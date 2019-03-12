@@ -9,3 +9,5 @@
 [komentorivi.txt](https://github.com/noorarytila/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 *lisää tiedostoja tulossa*
+
+### Viikko 2 tulossa
