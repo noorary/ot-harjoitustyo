@@ -1,6 +1,8 @@
-# README-tiedosto
+# Ohjelmistotekniikka, harjoitustyö
 
-Tämä tiedosto sisältää **tärkeää** tietoa. 
+## Tehtävät
 
-- Git
-  -GitHub
+### Viikko 1
+
+[gitlog.txt](https://github.com/noorarytila/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+[komentorivi.txt](https://github.com/noorarytila/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
