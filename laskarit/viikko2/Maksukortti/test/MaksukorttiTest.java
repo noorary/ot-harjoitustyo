@@ -18,6 +18,7 @@ import static org.junit.Assert.*;
 public class MaksukorttiTest {
     
     Maksukortti kortti;
+    Maksukortti toinenkortti;
     
     public MaksukorttiTest() {
     }
@@ -59,6 +60,36 @@ public class MaksukorttiTest {
         kortti.syoMaukkaasti();
         kortti.syoEdullisesti();
         assertEquals("Kortilla on rahaa 2.0 euroa", kortti.toString());
+    }
+    
+    @Test
+    public void syoMaukkaastiEiVieSaldoaNegatiiviseksi() {
+        kortti.syoMaukkaasti();
+        kortti.syoMaukkaasti();
+        kortti.syoMaukkaasti();
+        assertEquals("Kortilla on rahaa 2.0 euroa", kortti.toString());
+    }
+    
+    @Test
+    public void negatiivinenLatausEiMuutaSaldoa() {
+        kortti.lataaRahaa(-5.0);
+        assertEquals("Kortilla on rahaa 10.0 euroa", kortti.toString());
+    }
+    
+    @Test
+    public void voiOstaaEdullisenLounaan() {
+        toinenkortti = new Maksukortti(2.5);
+        kortti.syoEdullisesti();
+        kortti.syoMaukkaasti();
+        assertEquals("Kortilla on rahaa 0.0 euroa", toinenkortti.toString());
+    }
+    
+    @Test 
+    public void voiOstaaMaukkaanLounaan() {
+        toinenkortti = new Maksukortti(4.0);
+        toinenkortti.syoMaukkaasti();
+        toinenkortti.syoEdullisesti();
+        assertEquals("Kortilla on rahaa 0.0 euroa", toinenkortti.toString());
     }
     
     @Test
