@@ -30,7 +30,7 @@ tai tarkastelemaan yhteenvetoa.
 ### View summary - näkymä 
 * Käyttäjä näkee yhteenvedon neljän viimeisemmän viikon mielialoista
 * Käyttäjä voi palata takaisin perusnäkymään painamalla 'back'
-##Jatkokehitysideoita
+## Jatkokehitysideoita
 Perusversion jälkeen järjestelmää voidaan täydentää ajan salliessa esim. seuraavilla toiminnallisuuksilla
 * usean mielialan lisääminen samalle päivälle
 * kommentin lisääminen mielialan lisäämisen yhteydessä
