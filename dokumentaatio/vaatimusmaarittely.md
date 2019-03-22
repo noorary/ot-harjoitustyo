@@ -8,6 +8,7 @@ Alkuvaiheessa sovelluksella on vain yksi käyttäjärooli eli *normaali käyttä
 sta lisätä sovellukseen suuremmilla oikeuksilla varustettu *pääkäyttäjä*.
 ## Käyttöliittymäluonnos
 Sovelluksessa on neljä eri näkymää.
-
+![Kuva käyttöliittymäluonnoksesta]
+(https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/kayttoliittymaluonnos.jpg)
 
 
