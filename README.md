@@ -1,13 +1,9 @@
-# Ohjelmistotekniikka, harjoitustyö
+#Moodtracker App
 
-## Tehtävät
+## Ohjelmistotekniikka, harjoitustyö
 
-### Viikko 1
+### Dokumentaatio
 
-[gitlog.txt](https://github.com/noorarytila/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+[Vaatimusmäärittely](https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
-[komentorivi.txt](https://github.com/noorarytila/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
-*lisää tiedostoja tulossa*
-
-### Viikko 2 tulossa
