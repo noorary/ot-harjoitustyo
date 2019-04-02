@@ -22,6 +22,14 @@ public class UserTest {
         assertTrue(answer.equals(name));
         
     }
+    
+    @Test
+    public void returnUsername() {
+        String name = "name";
+        String username = "nickname";
+        User user1 = new User(username, name);
+        assertTrue(user1.getUsername().equals(username));
+    }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

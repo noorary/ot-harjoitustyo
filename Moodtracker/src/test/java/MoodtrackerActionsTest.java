@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author nrytila
  */
-public class MoodtrackerTest {
+public class MoodtrackerActionsTest {
     
-    public MoodtrackerTest() {
+    public MoodtrackerActionsTest() {
     }
     
     @BeforeClass
