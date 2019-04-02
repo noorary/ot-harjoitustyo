@@ -1,25 +1,33 @@
 
 package moodtracker.domain;
 
-import moodtracker.dao.DatabaseUserDao;
+import moodtracker.dao.UserDao;
 
 
 public class MoodtrackerActions {
     
-    private DatabaseUserDao DBuserDao;
     
-    public MoodtrackerActions(DatabaseUserDao dbuserDao) {
-        this.DBuserDao = dbuserDao;
+    private UserDao userDao;
+    
+    public MoodtrackerActions(UserDao userDao) {
+        this.userDao = userDao;
     }
     
     public boolean createUser(String username, String name) {
-        User user = new User(username, name);
+        if (userDao.findUser(username) != null) {
+            return false;
+        }
+        
+        User newuser = new User(username, name);
+        
         try {
-            DBuserDao.create(user);
+            userDao.create(newuser);
         } catch(Exception e) {
             return false;
         }
+        
         return true;
+        
     }
     
 }

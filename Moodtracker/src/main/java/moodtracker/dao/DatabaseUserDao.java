@@ -1,18 +1,18 @@
 
 
 
-//tietokannan käyttö toteutetaan myöhemmin
+/*
 
 
 package moodtracker.dao;
 
 
 
-/*import java.sql.Connection;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement; */
+import java.sql.Statement; 
 import java.util.ArrayList;
 import java.util.List;
 import moodtracker.domain.User;
@@ -20,38 +20,11 @@ import moodtracker.domain.User;
 
 public class DatabaseUserDao implements UserDao{
     
-    private List<User> users;
-    private String file;
-    
-    public void createList() {
-        users = new ArrayList<>();
-    }
-     @Override
-    public void create(User user) {
-        users.add(user);
-    }
-    
-    public List<User> getAll() {
-        return users;
-    }
-    
-    public User findUser(String username) {
-        return users.stream()
-                .filter(u->u.getUsername()
-                .equals(username))
-                .findFirst()
-                .orElse(null);
-    }
+
     
     
     
     
-    
-}
-    
-    
-    
-    /*
     public static void H2database() throws Exception {
     
     static final String JDBC_DRIVER = "org.h2.Driver";
@@ -94,3 +67,5 @@ public class DatabaseUserDao implements UserDao{
 }
 
 */
+
+

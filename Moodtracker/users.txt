@@ -1,0 +1,4 @@
+norppa;noora
+minttu;minna
+kayttaja;esimerkki
+noorar;noora

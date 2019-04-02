@@ -1,6 +1,10 @@
 
 package moodtracker.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+import moodtracker.dao.UserDao;
+
 public class User {
     
     private String name;
