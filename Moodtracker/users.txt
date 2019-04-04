@@ -2,3 +2,5 @@ norppa;noora
 minttu;minna
 kayttaja;esimerkki
 noorar;noora
+bill;billie
+koo;kaija

@@ -8,6 +8,7 @@ public class MoodtrackerActions {
     
     
     private UserDao userDao;
+    private User currentlyLoggedIn;
     
     public MoodtrackerActions(UserDao userDao) {
         this.userDao = userDao;
@@ -29,5 +30,19 @@ public class MoodtrackerActions {
         return true;
         
     }
+    
+    public boolean login(String username) {
+        
+        User user = userDao.findUser(username);
+        if (user == null) {
+            return false;
+        }
+        
+        currentlyLoggedIn = user;
+        
+        return true;
+    }
+    
+    
     
 }

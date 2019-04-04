@@ -1,7 +1,7 @@
 
 
 
-/*
+/* tarkoitus toteuttaa myöhemmässä vaiheessa
 
 
 package moodtracker.dao;
