@@ -8,4 +8,5 @@ päivä | aika | mitä tein
 30.3  | 1.5  | Uuden käyttäjän luominen - toiminallisuus aloitettu
 2.4   | 3    | Graafinen käyttöliittymä, uuden käyttäjän luominen - toiminnallisuus, debugaaminen
 2.4   | 1    | Testein aloittaminen, pom.xml konfigurointi, mavenin säätö
-yht   | 8    |
+4.4   | 1.5  | Pientä säätöä ui:hin, kirjautuminen - toiminnallisuus toteutettu
+yht   | 9.5  | 
