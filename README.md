@@ -17,3 +17,13 @@ Käyttöohje tulossa
 Arkkitehtuurikuvaus tulossa
 
 Testausdokumentti tulossa
+
+### Releaset
+tulossa
+
+###Komentorivikomennot
+
+####Testaus
+
+Testit suoritetaan komennolla
+```mvn test```
