@@ -1,6 +1,8 @@
 
 package moodtracker.dao;
 
+
+
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -53,6 +55,8 @@ public class FileUserDao implements UserDao {
                     .orElse(null);
         }
         
+        
+        
         @Override
         public User create(User user) throws Exception {
             users.add(user);
@@ -62,3 +66,4 @@ public class FileUserDao implements UserDao {
       
     
 }
+

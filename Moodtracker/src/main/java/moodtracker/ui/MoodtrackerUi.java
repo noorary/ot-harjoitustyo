@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 import javafx.geometry.Insets;
 import moodtracker.dao.FileUserDao;
 import moodtracker.domain.MoodtrackerActions;
+import moodtracker.domain.User;
 
 
 public class MoodtrackerUi extends Application {
@@ -22,6 +23,7 @@ public class MoodtrackerUi extends Application {
     private Scene startScene;
     private Scene newUserScene;
     private Scene mainScene;
+    private User currentlyLoggedIn;
     
 
     @Override
@@ -37,6 +39,9 @@ public class MoodtrackerUi extends Application {
         FileUserDao userDao = new FileUserDao(userFile);
         
         moodtrackerActions = new MoodtrackerActions(userDao);
+        
+        currentlyLoggedIn = moodtrackerActions.currentlyLoggedIn;
+        
     }
     
     @Override
@@ -60,7 +65,8 @@ public class MoodtrackerUi extends Application {
         
         Label userCreated = new Label("");
         
-        Label mainTitle = new Label("WELCOME TO MOODTRACKER");
+        
+        Label mainTitle = new Label("");
         
         loginPane.getChildren().addAll(usernameInput, usernameLabel, login);
         startPane.getChildren().addAll(appName, loginPane, newUser, userCreated);
@@ -70,6 +76,7 @@ public class MoodtrackerUi extends Application {
             String inputUsername = usernameInput.getText();
             
             if(moodtrackerActions.login(inputUsername)) {
+                mainTitle.setText("Welcome to MoodTracker! ");
                 stage.setScene(mainScene);
             }
         });

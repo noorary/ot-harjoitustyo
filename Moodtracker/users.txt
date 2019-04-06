@@ -4,3 +4,5 @@ kayttaja;esimerkki
 noorar;noora
 bill;billie
 koo;kaija
+norarosa;roosa
+norppa;noora
