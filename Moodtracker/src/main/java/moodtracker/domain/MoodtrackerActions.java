@@ -15,9 +15,9 @@ public class MoodtrackerActions {
     }
     
     public boolean createUser(String username, String name) {
-        //if (userDao.findUser(username) != null) {
-            //return false;
-        //}
+        if (userDao.findUser(username) != null) {
+            return false;
+        }
         
         User newuser = new User(username, name);
         
