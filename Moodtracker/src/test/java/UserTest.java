@@ -19,7 +19,7 @@ public class UserTest {
         String username = "nickname";
         User user1 = new User(username, name);
         String answer = user1.getName();
-        assertTrue(answer.equals(name));
+        assertEquals(answer, "name");
         
     }
     
@@ -28,7 +28,7 @@ public class UserTest {
         String name = "name";
         String username = "nickname";
         User user1 = new User(username, name);
-        assertTrue(user1.getUsername().equals(username));
+        assertEquals(user1.getUsername(), "nickname");
     }
 
     // TODO add test methods here.
@@ -37,7 +37,5 @@ public class UserTest {
     // @Test
     // public void hello() {}
 
-    private void assertEquals(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }
