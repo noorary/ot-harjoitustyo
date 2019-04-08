@@ -12,4 +12,5 @@ päivä | aika | mitä tein
 5.4   | 2    | Tietokantojen ihmettely ja ajatuksen hylkääminen toistaiseksi 
 6.4   | 2    | Springin hylkääminen, tiedostoon tallennuksen vakauttaminen
 7.4   | 3    | Käyttöliittymän edistäminen, testien kirjoittaminen
+8.4   | 2    | Testien kirjoittaminen, checkstyle käyttöönotto ja luokka/pakkauskaavio
 yht   | 16,5 | 
