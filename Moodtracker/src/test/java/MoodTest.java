@@ -65,7 +65,7 @@ public class MoodTest {
         LocalDate date = LocalDate.now();
         Mood m = new Mood (2, 3, date, u);
         
-        LocalDate now = LocalDate.of(2019, Month.APRIL, 7);
+        LocalDate now = LocalDate.now();
         
         assertEquals(m.getDate(), now);
     }

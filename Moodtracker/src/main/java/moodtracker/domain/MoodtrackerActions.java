@@ -23,7 +23,7 @@ public class MoodtrackerActions {
         
         try {
             userDao.create(newuser);
-        } catch(Exception e) {
+        } catch (Exception e) {
             return false;
         }
         

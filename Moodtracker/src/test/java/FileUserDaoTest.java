@@ -5,10 +5,12 @@
  */
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,6 +22,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.io.FileInputStream;
+import moodtracker.dao.UserDao;
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 
 /**
  *
@@ -27,38 +33,58 @@ import static org.junit.Assert.*;
  */
 public class FileUserDaoTest {
     
-    private List<User> users;
-    private String file;
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
     
-    public FileUserDaoTest() throws IOException {
-        users = new ArrayList<>();
-        this.file = file;
+    File userFile;
+    UserDao dao;
+    
+    @Before
+    public void setUp() throws Exception {
+        userFile = testFolder.newFile("testfile_users.txt");
         
-        try {
-            Scanner reader = new Scanner(new File(file));
-            while (reader.hasNextLine()) {
-                String[] parts = reader.nextLine().split(";");
-                User u = new User(parts[0], parts[1]);
-                users.add(u);
-            } 
-        } catch (Exception e) {
-                    FileWriter writer = new FileWriter(new File(file));
-                    writer.close();
-          }
-
+        try (FileWriter file = new FileWriter(userFile.getAbsolutePath())) {
+            file.write("esimerkki;erkki\n");
+        }
+        
+        dao = new FileUserDao(userFile.getAbsolutePath());
     }
     
     @Test
-    public void getAllWorks() {
-        User e = new User("esimerkki", "erkki");
-        users.add(e);
-        try {
-            FileUserDao fileuserDao = new FileUserDao(file);
-            assertEquals(users, fileuserDao.getAll());
-        } catch (Exception ex) {
-            Logger.getLogger(FileUserDaoTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public void userReadingWorks() {
+        List<User> users = dao.getAll();
+        assertEquals(1, users.size());
+        User user = users.get(0);
+        assertEquals("esimerkki", user.getUsername());
+        assertEquals("erkki", user.getName());
+    }
+    
+    @Test
+    public void nonExistingUserIsNull() {
+        User user = dao.findUser("mallikas");
+        assertEquals(null, user);
+    }
+    
+    @Test
+    public void existingUserIsFound() {
+        User user = dao.findUser("esimerkki");
+        assertEquals("esimerkki", user.getUsername());
+        assertEquals("erkki", user.getName());
+    }
+    
+    @Test
+    public void savedUserIsFound() throws Exception {
+        User nu = new User("norppa", "noora");
+        dao.create(nu);
         
+        User user = dao.findUser("norppa");
+        assertEquals("norppa", user.getUsername());
+        assertEquals("noora", user.getName());
+    }
+    
+    @After
+    public void tearDown() {
+        userFile.delete();
     }
 
     // TODO add test methods here.

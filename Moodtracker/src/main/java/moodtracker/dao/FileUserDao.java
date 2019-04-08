@@ -26,43 +26,43 @@ public class FileUserDao implements UserDao {
                 users.add(u);
             } 
         } catch (Exception e) {
-                    FileWriter writer = new FileWriter(new File(file));
-                    writer.close();
-          }
-        
-        
+            FileWriter writer = new FileWriter(new File(file));
+            writer.close();
         }
+        
+        
+    }
     
-        private void save() throws Exception {
-            try (FileWriter writer = new FileWriter(new File(file))) {
-                for (User user : users) {
-                    writer.write(user.getUsername() + ";" + user.getName() + "\n");
-                }
+    private void save() throws Exception {
+        try (FileWriter writer = new FileWriter(new File(file))) {
+            for (User user : users) {
+                writer.write(user.getUsername() + ";" + user.getName() + "\n");
             }
         }
+    }
         
-        @Override
+    @Override
         public List<User> getAll() {
-            return users;
-        }
+        return users;
+    }
         
-        @Override
-        public User findUser (String username) {
-            return users.stream()
+    @Override
+    public User findUser(String username) {
+        return users.stream()
                     .filter(u -> u.getUsername()
                     .equals(username))
                     .findFirst()
                     .orElse(null);
-        }
+    }
         
         
         
-        @Override
-        public User create(User user) throws Exception {
-            users.add(user);
-            save();
-            return user;
-        }
+    @Override
+    public User create(User user) throws Exception {
+        users.add(user);
+        save();
+        return user;
+    }
       
     
 }

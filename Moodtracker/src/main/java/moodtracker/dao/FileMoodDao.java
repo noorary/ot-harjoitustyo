@@ -32,9 +32,9 @@ public class FileMoodDao {
                 moods.add(mood);
             } 
         } catch (Exception e) {
-                    FileWriter writer = new FileWriter(new File(file));
-                    writer.close();
-                    }
+            FileWriter writer = new FileWriter(new File(file));
+            writer.close();
+        }
     }
     
 }
