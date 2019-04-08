@@ -14,7 +14,7 @@ Sovellus tarjoaa yhteenvetoja mielialojen kehityksestä.
 
 Käyttöohje tulossa
 
-Arkkitehtuurikuvaus tulossa
+[Arkkitehtuurikuvaus](https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
 Testausdokumentti tulossa
 
