@@ -13,4 +13,4 @@ päivä | aika | mitä tein
 6.4   | 2    | Springin hylkääminen, tiedostoon tallennuksen vakauttaminen
 7.4   | 3    | Käyttöliittymän edistäminen, testien kirjoittaminen
 8.4   | 2    | Testien kirjoittaminen, checkstyle käyttöönotto ja luokka/pakkauskaavio
-yht   | 16,5 | 
+yht   | 18,5 | 
