@@ -10,4 +10,6 @@ päivä | aika | mitä tein
 2.4   | 1    | Testein aloittaminen, pom.xml konfigurointi, mavenin säätö
 4.4   | 1.5  | Pientä säätöä ui:hin, kirjautuminen - toiminnallisuus toteutettu
 5.4   | 2    | Tietokantojen ihmettely ja ajatuksen hylkääminen toistaiseksi 
-yht   | 11.5 | 
+6.4   | 2    | Springin hylkääminen, tiedostoon tallennuksen vakauttaminen
+7.4   | 3    | Käyttöliittymän edistäminen, testien kirjoittaminen
+yht   | 16,5 | 
