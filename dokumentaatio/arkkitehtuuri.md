@@ -1,2 +1,2 @@
 ![luokka/pakkauskaavio]
-(https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/Moodtracker%20luokka_pakkauskaavio.png?raw=true)
+(https://raw.githubusercontent.com/noorarytila/ot-harjoitustyo/master/dokumentaatio/Moodtracker%20luokka_pakkauskaavio.png)
