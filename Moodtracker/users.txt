@@ -6,3 +6,4 @@ bill;billie
 koo;kaija
 norarosa;roosa
 norppa;noora
+tomppa;tomi

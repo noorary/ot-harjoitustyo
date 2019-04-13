@@ -11,12 +11,12 @@ import moodtracker.domain.Mood;
 import java.time.LocalDate;
 
 
-public class FileMoodDao {
+public class FileMoodDao implements MoodDao {
     
     public List<Mood> moods;
     private String file;
     
-    public FileMoodDao(String file, UserDao users) throws Exception {
+    public FileMoodDao  (String file, UserDao users) throws Exception {
         moods = new ArrayList<>();
         this.file = file;
         
@@ -35,6 +35,16 @@ public class FileMoodDao {
             FileWriter writer = new FileWriter(new File(file));
             writer.close();
         }
+        
+        
+        
+        }
+    
+    @Override
+            public List<Mood> getAll() {
+                
+                return moods;
+        
     }
     
 }
