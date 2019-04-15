@@ -1,6 +1,7 @@
 
 package moodtracker.domain;
 
+import java.time.LocalDate;
 import moodtracker.dao.UserDao;
 import moodtracker.dao.MoodDao;
 
@@ -10,10 +11,12 @@ public class MoodtrackerActions {
     private UserDao userDao;
     public User currentlyLoggedIn;
     private MoodDao moodDao;
+    public LocalDate localdate;
     
     public MoodtrackerActions(UserDao userDao, MoodDao moodDao) {
         this.userDao = userDao;
         this.moodDao = moodDao;
+        
     }
     
     public boolean createUser(String username, String name) {
@@ -43,6 +46,22 @@ public class MoodtrackerActions {
         currentlyLoggedIn = user;
         
         return true;
+    }
+    
+    public boolean createMood(int value) {
+        
+        LocalDate now = LocalDate.now();
+        Mood m = new Mood(0, value, now, currentlyLoggedIn);
+        
+        try {
+            moodDao.create(m);
+        } catch (Exception e) {
+            return false;
+        }
+        
+        return true;
+        
+        
     }
     
     

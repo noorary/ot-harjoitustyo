@@ -8,6 +8,8 @@ public interface MoodDao {
     
     List<Mood> getAll();
     
+    Mood create(Mood mood) throws Exception;
+    
     
     
 }

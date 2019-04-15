@@ -16,6 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.geometry.Insets;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import moodtracker.dao.FileMoodDao;
@@ -105,15 +106,15 @@ public class MoodtrackerUi extends Application {
         m8.setToggleGroup(group);
         m9.setToggleGroup(group);
         m10.setToggleGroup(group);
-//        DateFormat dateFormat = new SimpleDateFormat("yyy-mm-dd");
-//        LocalDate n = LocalDate.now();
-//        String ns = dateFormat.format(n);
-//        Button date = new Button(ns);
+        m1.setUserData(m9);
+        
+        Button add = new Button("Add mood");
+
         
         loginPane.getChildren().addAll(usernameInput, usernameLabel, login);
         startPane.getChildren().addAll(appName, loginPane, newUser, userCreated);
         moodButtonPane.getChildren().addAll(m1, m2, m3, m4, m5, m6, m7, m8, m9, m10);
-        mainPane.getChildren().addAll(mainTitle, addNewMood, moodButtonPane);
+        mainPane.getChildren().addAll(mainTitle, addNewMood, moodButtonPane, add);
         
         login.setOnAction(e ->{
             String inputUsername = usernameInput.getText();
@@ -154,8 +155,15 @@ public class MoodtrackerUi extends Application {
  
         });
         
-        m1.setOnAction(e -> {
-            int mood = Integer.valueOf(m1.getText());
+        add.setOnAction(e ->{
+            
+            RadioButton rb = (RadioButton)group.getSelectedToggle();
+            String sv = rb.getText();
+            Integer moodvalue = Integer.parseInt(sv);
+            
+            moodtrackerActions.createMood(moodvalue);
+            
+            
             
         });
         
