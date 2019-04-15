@@ -96,7 +96,7 @@ public class MoodtrackerUi extends Application {
         RadioButton m9 = new RadioButton("9");
         RadioButton m10 = new RadioButton("10");
         m1.setToggleGroup(group);
-        m1.setSelected(true);
+        //m1.setSelected(true);
         m2.setToggleGroup(group);
         m3.setToggleGroup(group);
         m4.setToggleGroup(group);
@@ -109,12 +109,13 @@ public class MoodtrackerUi extends Application {
         m1.setUserData(m9);
         
         Button add = new Button("Add mood");
+        Label moodCreated = new Label("");
 
         
         loginPane.getChildren().addAll(usernameInput, usernameLabel, login);
         startPane.getChildren().addAll(appName, loginPane, newUser, userCreated);
         moodButtonPane.getChildren().addAll(m1, m2, m3, m4, m5, m6, m7, m8, m9, m10);
-        mainPane.getChildren().addAll(mainTitle, addNewMood, moodButtonPane, add);
+        mainPane.getChildren().addAll(mainTitle, addNewMood, moodButtonPane, add, moodCreated);
         
         login.setOnAction(e ->{
             String inputUsername = usernameInput.getText();
@@ -162,6 +163,9 @@ public class MoodtrackerUi extends Application {
             Integer moodvalue = Integer.parseInt(sv);
             
             moodtrackerActions.createMood(moodvalue);
+            
+            moodCreated.setText("Mood saved! :)");
+            rb.setSelected(false);
             
             
             

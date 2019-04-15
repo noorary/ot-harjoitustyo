@@ -62,7 +62,7 @@ public class FileMoodDao implements MoodDao {
              private void save() throws Exception {
                  try (FileWriter writer = new FileWriter(new File(file))) {
                      for (Mood mood : moods) {
-                         writer.write(mood.getId() + ";" + mood.getValue() + ";" + mood.getDate() + ";" + mood.getUser());
+                         writer.write(mood.getId() + ";" + mood.getValue() + ";" + mood.getDate() + ";" + mood.getUser() + "\n");
                      }
                  }
              }
