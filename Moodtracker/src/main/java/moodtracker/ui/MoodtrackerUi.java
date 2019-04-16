@@ -3,6 +3,7 @@ package moodtracker.ui;
 
 import java.time.LocalDate;
 import java.io.FileInputStream;
+import java.lang.reflect.InvocationTargetException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Properties;
@@ -37,7 +38,7 @@ public class MoodtrackerUi extends Application {
     
 
     @Override
-    public void init() throws Exception {
+    public void init() throws Exception{
         Properties properties = new Properties();
         
         FileInputStream inputstream = new FileInputStream("config.properties");
@@ -54,7 +55,9 @@ public class MoodtrackerUi extends Application {
         
         currentlyLoggedIn = moodtrackerActions.currentlyLoggedIn;
         
-    }
+    } 
+    
+
     
     @Override
     public void start(Stage stage) {

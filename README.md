@@ -19,7 +19,7 @@ Käyttöohje tulossa
 Testausdokumentti tulossa
 
 ### Releaset
-tulossa
+[Viikko5](https://github.com/noorarytila/ot-harjoitustyo/releases)
 
 ### Komentorivikomennot
 
