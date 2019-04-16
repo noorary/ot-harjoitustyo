@@ -37,8 +37,6 @@ Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto *target/site/ja
 
 #### Suoritettavan jarin generointi
 
-**tulossa**
-
 Komento
 
 ```mvn package```
@@ -56,8 +54,6 @@ JavaDoc generoidaan komennolla
 JavaDocia voi tarkastella avaamalla selaimella tiedosto *target/site/apidocs/index.html*
 
 #### Checkstyle
-
-**tulossa**
 
 Tiedostoon **checkstyle.xml(linkki tulossa)* määritellyt tarkistukset suoritetaan komennolla
 
