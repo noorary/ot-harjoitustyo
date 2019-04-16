@@ -4,6 +4,6 @@
 ## Kirjautuminen sekvenssikaaviona
 
 Kun kirjautumiskenttään on kirjoitettu käyttäjätunnus ja loginButton:ia
-painetaa, etenee kirjautuminen seuraavasti
+painetaan, etenee kirjautuminen seuraavasti
 
 ![kirjautuminensekvenssi](https://raw.githubusercontent.com/noorarytila/ot-harjoitustyo/master/dokumentaatio/kirjautuminen.jpg)
