@@ -13,4 +13,7 @@ päivä | aika | mitä tein
 6.4   | 2    | Springin hylkääminen, tiedostoon tallennuksen vakauttaminen
 7.4   | 3    | Käyttöliittymän edistäminen, testien kirjoittaminen
 8.4   | 2    | Testien kirjoittaminen, checkstyle käyttöönotto ja luokka/pakkauskaavio
-yht   | 18,5 | 
+13.4  | 4    | Käyttöliittymän edistäminen, uuden Moodin lisääminen
+15.4  | 2    | Moodin lisääminen valmis
+16.4  | 2    | Testejä, release
+yht   | 26,5 | 
