@@ -16,4 +16,8 @@ päivä | aika | mitä tein
 13.4  | 4    | Käyttöliittymän edistäminen, uuden Moodin lisääminen
 15.4  | 2    | Moodin lisääminen valmis
 16.4  | 2    | Testejä, release
-yht   | 26,5 | 
+18.4  | 1.5  | Yritin saada javafx toimimaan
+19.4  | 1    | Edelleen yritin saada javafx toimimaan
+20.4  | 1.5  | Vihdoin javafx taas toimii
+21.4  | 4.5  | Piirakkadiagrammin toteutus
+yht   | 26.5 | 
