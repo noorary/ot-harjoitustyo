@@ -7,3 +7,4 @@ koo;kaija
 norarosa;roosa
 norppa;noora
 tomppa;tomi
+esimerkki;erkki

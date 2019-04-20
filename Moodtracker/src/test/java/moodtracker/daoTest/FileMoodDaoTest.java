@@ -1,5 +1,8 @@
+package moodtracker.daoTest;
 
 
+
+import moodtracker.daoTest.FakeUserDao;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

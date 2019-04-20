@@ -1,3 +1,5 @@
+package moodtracker.domainTest;
+
 
 
 import java.time.LocalDate;

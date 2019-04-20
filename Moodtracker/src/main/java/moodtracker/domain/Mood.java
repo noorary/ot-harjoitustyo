@@ -37,7 +37,7 @@ public class Mood {
         this.date = date;
     }
 
-    public void setUser(User user) {
+    public void setUser(String usernmae) {
         this.user = user;
     }
 

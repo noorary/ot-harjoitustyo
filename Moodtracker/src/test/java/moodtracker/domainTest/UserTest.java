@@ -1,3 +1,5 @@
+package moodtracker.domainTest;
+
 
 import moodtracker.domain.User;
 import org.junit.After;

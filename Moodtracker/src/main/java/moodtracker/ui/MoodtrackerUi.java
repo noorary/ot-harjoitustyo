@@ -6,8 +6,12 @@ import java.io.FileInputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,6 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Insets;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
@@ -22,8 +27,14 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import moodtracker.dao.FileMoodDao;
 import moodtracker.dao.FileUserDao;
+import moodtracker.domain.Mood;
 import moodtracker.domain.MoodtrackerActions;
 import moodtracker.domain.User;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.scene.Group;
 
 
 public class MoodtrackerUi extends Application {
@@ -33,8 +44,11 @@ public class MoodtrackerUi extends Application {
     private Scene startScene;
     private Scene newUserScene;
     private Scene mainScene;
+    private Scene piechartScene;
     private User currentlyLoggedIn;
     private LocalDate localdate;
+    
+    public List<Mood> moods;
     
 
     @Override
@@ -57,6 +71,8 @@ public class MoodtrackerUi extends Application {
         
     } 
     
+    
+    
 
     
     @Override
@@ -69,6 +85,7 @@ public class MoodtrackerUi extends Application {
         VBox newuserPane = new VBox(15);
         VBox mainPane = new VBox(15);
         HBox moodButtonPane = new HBox(15);
+        VBox piechartPane = new VBox(30);
         
         loginPane.setPadding(new Insets(10));
         startPane.setPadding(new Insets(20));
@@ -113,12 +130,14 @@ public class MoodtrackerUi extends Application {
         
         Button add = new Button("Add mood");
         Label moodCreated = new Label("");
+        
+        Button showPieChart = new Button("Show moods in piechart");
 
         
         loginPane.getChildren().addAll(usernameInput, usernameLabel, login);
         startPane.getChildren().addAll(appName, loginPane, newUser, userCreated);
         moodButtonPane.getChildren().addAll(m1, m2, m3, m4, m5, m6, m7, m8, m9, m10);
-        mainPane.getChildren().addAll(mainTitle, addNewMood, moodButtonPane, add, moodCreated);
+        mainPane.getChildren().addAll(mainTitle, addNewMood, moodButtonPane, add, moodCreated, showPieChart);
         
         login.setOnAction(e ->{
             String inputUsername = usernameInput.getText();
@@ -174,9 +193,47 @@ public class MoodtrackerUi extends Application {
             
         });
         
+        showPieChart.setOnAction(e -> {
+            
+            int value4 = 0;
+            try {
+                
+                System.out.println(moodtrackerActions.usersMoods());
+                
+                HashMap<Integer, Integer> moodmap = moodtrackerActions.usersMoods();
+                value4 = moodmap.get(4);
+            } catch (Exception ex) {
+                Logger.getLogger(MoodtrackerUi.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+             ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+            
+            new PieChart.Data("1", value4));
+             
+             
+                 PieChart pieChart = new PieChart(pieChartData);
+                 
+                 
+                 Group root = new Group(pieChart);
+                 
+                 piechartScene = new Scene(root, 600, 500);
+                 stage.setScene(piechartScene);
+       
+            
+            
+            
+            
+            
+
+            
+        });
+        
+        
+        
         startScene = new Scene(startPane, 600, 500);
         newUserScene = new Scene(newuserPane, 600, 500);
         mainScene = new Scene(mainPane, 600, 500);
+        
         
         
         //setup start stage
