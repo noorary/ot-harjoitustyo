@@ -20,4 +20,4 @@ päivä | aika | mitä tein
 19.4  | 1    | Edelleen yritin saada javafx toimimaan
 20.4  | 1.5  | Vihdoin javafx taas toimii
 21.4  | 4.5  | Piirakkadiagrammin toteutus
-yht   | 26.5 | 
+yht   | 35   | 
