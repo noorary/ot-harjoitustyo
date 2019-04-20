@@ -195,37 +195,91 @@ public class MoodtrackerUi extends Application {
         
         showPieChart.setOnAction(e -> {
             
-            int value4 = 0;
+            int value1 = 0;
+            int value2 = 0;
+            int value3 =0;
+            int value4 =0;
+            int value5 =0;
+            int value6 =0;
+            int value7 =0;
+            int value8 =0;
+            int value9 =0;
+            int value10 =0;
             try {
                 
                 System.out.println(moodtrackerActions.usersMoods());
                 
                 HashMap<Integer, Integer> moodmap = moodtrackerActions.usersMoods();
-                value4 = moodmap.get(4);
+                
+                if(moodmap.containsKey(1)) {
+                    value1 = moodmap.get(1);
+                } 
+                
+                if(moodmap.containsKey(2)) {
+                    value2 = moodmap.get(2);
+                }
+                
+                if(moodmap.containsKey(3)) {
+                    value3 = moodmap.get(3);
+                }
+                
+                if(moodmap.containsKey(4)) {
+                    value4 = moodmap.get(4);
+                }
+                
+                if(moodmap.containsKey(5)) {
+                    value5 = moodmap.get(5);
+                }
+                
+                if(moodmap.containsKey(6)) {
+                    value2 = moodmap.get(6);
+                }
+                
+                if(moodmap.containsKey(7)) {
+                    value2 = moodmap.get(7);
+                }
+                
+                if(moodmap.containsKey(8)) {
+                    value2 = moodmap.get(8);
+                }
+                if(moodmap.containsKey(9)) {
+                    value2 = moodmap.get(9);
+                }
+                
+                if(moodmap.containsKey(10)) {
+                    value2 = moodmap.get(10);
+                }
+                
+                
             } catch (Exception ex) {
                 Logger.getLogger(MoodtrackerUi.class.getName()).log(Level.SEVERE, null, ex);
             }
             
              ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
             
-            new PieChart.Data("1", value4));
-             
+                new PieChart.Data("1", value1),
+                new PieChart.Data("2", value2),
+                new PieChart.Data("3", value3),
+                new PieChart.Data("4", value4),
+                new PieChart.Data("5", value5),
+                new PieChart.Data("6", value6),
+                new PieChart.Data("7", value7),
+                new PieChart.Data("8", value8),
+                new PieChart.Data("9", value9),
+                new PieChart.Data("10", value10));
+                
+            
              
                  PieChart pieChart = new PieChart(pieChartData);
+                 
+                
                  
                  
                  Group root = new Group(pieChart);
                  
                  piechartScene = new Scene(root, 600, 500);
                  stage.setScene(piechartScene);
-       
-            
-            
-            
-            
-            
-
-            
+   
         });
         
         
