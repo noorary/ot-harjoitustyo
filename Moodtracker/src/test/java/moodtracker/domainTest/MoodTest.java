@@ -72,5 +72,17 @@ public class MoodTest {
         assertEquals(m.getDate(), now);
     }
     
+    @Test
+    public void setIdWorks() {
+        User u = new User("name", "name");
+        User u2 = new User("esim", "erkki");
+        
+        LocalDate date = LocalDate.now();
+        Mood m = new Mood(2, 3, date, u);
+        m.setId(3);
+        
+        assertEquals(m.getId(), 3);
+    }
+    
 
 }

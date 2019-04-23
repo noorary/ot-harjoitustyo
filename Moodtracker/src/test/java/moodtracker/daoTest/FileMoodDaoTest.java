@@ -12,6 +12,7 @@ import static org.junit.Assert.*;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.time.LocalDate;
 import java.util.List;
 import moodtracker.dao.FileMoodDao;
 import moodtracker.dao.UserDao;
@@ -59,6 +60,23 @@ public class FileMoodDaoTest {
         //todo päivämäärän testaus
         assertEquals("esimerkki", mood.getUser().getUsername());
     }
-
+    
+    @Test
+    public void generatesId() {
+        List<Mood> moods = dao.getAll();
+        int id = moods.size() + 1;
+        
+        assertEquals(dao.generateId(), id);
+   
+    }
+    
+    @Test
+    public void createMoodWorks() throws Exception{
+        LocalDate d = LocalDate.now();
+        User u = new User("esim", "erika");
+        Mood m = new Mood(0, 9, d, u);
+        
+        assertEquals(dao.create(m), m);
+    }
     
 }

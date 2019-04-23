@@ -8,3 +8,5 @@ norarosa;roosa
 norppa;noora
 tomppa;tomi
 esimerkki;erkki
+noorarosa;noora
+jamppa;jarmo

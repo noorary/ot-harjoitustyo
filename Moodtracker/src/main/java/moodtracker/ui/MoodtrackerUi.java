@@ -78,7 +78,15 @@ public class MoodtrackerUi extends Application {
     @Override
     public void start(Stage stage) {
         
-        //login scene
+        //todo log out
+        //todo go back from creating new user
+        //todo clear new user input fields
+        //todo new user fieldien koko
+        //todo user created tekstin hienosäätö
+        //mood saved teksti pois muutaman sekunnin päästä
+        //kuka on kirjautunu?
+        //piirakasta paluu go back
+        
         
         VBox loginPane = new VBox(15);
         VBox startPane = new VBox(30);
@@ -99,10 +107,15 @@ public class MoodtrackerUi extends Application {
         Label userCreated = new Label("");
         
         
-        //todo käyttöliittymän hienosäätö
+        //todo MoodTracker labelin kustomointi
+        //todo username kentän koko
+        //
         
         Label mainTitle = new Label("");
         Label addNewMood = new Label("Add new mood, 1 = lowest, 10 = highest");
+        
+        //todo radiobuttoneille moodeja vastaavat värit
+        
         
         ToggleGroup group = new ToggleGroup();
         RadioButton m1 = new RadioButton("1");
@@ -132,6 +145,7 @@ public class MoodtrackerUi extends Application {
         Label moodCreated = new Label("");
         
         Button showPieChart = new Button("Show moods in piechart");
+        //todo xyAxis chart
 
         
         loginPane.getChildren().addAll(usernameInput, usernameLabel, login);
@@ -141,6 +155,8 @@ public class MoodtrackerUi extends Application {
         
         login.setOnAction(e ->{
             String inputUsername = usernameInput.getText();
+            
+            //todo viesti jos käyttäjää ei löydy
             
             if(moodtrackerActions.login(inputUsername)) {
                 mainTitle.setText("Welcome to MoodTracker! ");
@@ -195,16 +211,44 @@ public class MoodtrackerUi extends Application {
         
         showPieChart.setOnAction(e -> {
             
-            int value1 = 0;
-            int value2 = 0;
-            int value3 =0;
-            int value4 =0;
-            int value5 =0;
-            int value6 =0;
-            int value7 =0;
-            int value8 =0;
-            int value9 =0;
-            int value10 =0;
+            showPieChart(stage);
+            
+   
+        });
+        
+        
+        
+        startScene = new Scene(startPane, 600, 500);
+        newUserScene = new Scene(newuserPane, 600, 500);
+        mainScene = new Scene(mainPane, 600, 500);
+        
+        
+        
+        //setup start stage
+        
+        stage.setTitle("Moods");
+        stage.setScene(startScene);
+        stage.show();
+        
+        
+    }
+    
+    public static void main(String[] args) {
+        launch(args);
+    }
+    
+    private void showPieChart(Stage stage) {
+        int value1 = 0;
+        int value2 = 0;
+        int value3 =0;
+        int value4 =0;
+        int value5 =0;
+        int value6 =0;
+        int value7 =0;
+        int value8 =0;
+        int value9 =0;
+        int value10 =0;
+        
             try {
                 
                 System.out.println(moodtrackerActions.usersMoods());
@@ -255,6 +299,8 @@ public class MoodtrackerUi extends Application {
                 Logger.getLogger(MoodtrackerUi.class.getName()).log(Level.SEVERE, null, ex);
             }
             
+            //todo kaavion numeroille oikeat värit
+            
              ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
             
                 new PieChart.Data("1", value1),
@@ -279,28 +325,6 @@ public class MoodtrackerUi extends Application {
                  
                  piechartScene = new Scene(root, 600, 500);
                  stage.setScene(piechartScene);
-   
-        });
-        
-        
-        
-        startScene = new Scene(startPane, 600, 500);
-        newUserScene = new Scene(newuserPane, 600, 500);
-        mainScene = new Scene(mainPane, 600, 500);
-        
-        
-        
-        //setup start stage
-        
-        stage.setTitle("Moods");
-        stage.setScene(startScene);
-        stage.show();
-        
-        
-    }
-    
-    public static void main(String[] args) {
-        launch(args);
     }
     
 }

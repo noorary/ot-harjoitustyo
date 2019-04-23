@@ -54,7 +54,7 @@ public class FileMoodDao implements MoodDao {
         
     }
              
-    private int generateId() {
+    public int generateId() {
         return moods.size() + 1;
     }
              

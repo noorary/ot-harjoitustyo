@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import moodtracker.dao.MoodDao;
 import moodtracker.domain.Mood;
+import moodtracker.domain.User;
 
 public class FakeMoodDao implements MoodDao {
     List<Mood> moods;
@@ -26,6 +27,12 @@ public class FakeMoodDao implements MoodDao {
         mood.setId(moods.size()+1);
         moods.add(mood);
         return mood;
+    }
+    
+    @Override
+    public ArrayList<Integer> usersMoods(User user) {
+        ArrayList<Integer> moods = new ArrayList<>();
+        return moods;
     }
     
 }

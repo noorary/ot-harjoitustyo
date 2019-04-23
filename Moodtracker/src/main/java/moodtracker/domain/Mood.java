@@ -33,25 +33,15 @@ public class Mood {
         return user;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public void setUser(String usernmae) {
-        this.user = user;
+    public int getValue() {
+        return value;
     }
 
     public void setId(int id) {
         this.id = id;
     }
-
-    public void setValue(int value) {
-        this.value = value;
-    }
-
-    public int getValue() {
-        return value;
-    }
+    
+    
     
     
     
