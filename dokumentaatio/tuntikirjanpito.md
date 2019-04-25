@@ -22,4 +22,5 @@ päivä | aika | mitä tein
 21.4  | 4.5  | Piirakkadiagrammin toteutus
 23.4  | 1    | Yksikkötestien tekeminen
 25.4  | 1    | Javadoc ja arkkitehtuurikuvaus
-yht   | 37   | 
+25.4  | 3.5  | Arkkitehtuurikuvaus, käyttöohje, ui-hienosäätöä
+yht   | 40.5 | 

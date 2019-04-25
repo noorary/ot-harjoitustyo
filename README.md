@@ -12,7 +12,7 @@ Sovellus tarjoaa yhteenvetoja mielialojen kehityksestä.
 
 [Työaikakirjanpito](https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
-Käyttöohje tulossa
+[Käyttöohje](https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
 [Arkkitehtuurikuvaus](https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
