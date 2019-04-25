@@ -5,6 +5,13 @@ import java.lang.Object;
 import java.time.LocalDate;
 import moodtracker.domain.User;
 
+
+/**
+ * Luokka tarjoaa Moodin luomiseen tarvittavan toiminnallisuuden ja
+ * luomiseen ja päivittämiseen tarvittavia metodeja.
+ * @author nrytila
+ */
+
 public class Mood {
     
     private int id;

@@ -21,6 +21,16 @@ public class MoodtrackerActions {
         
     }
     
+    
+    /**
+     * Metodi toteuttaa toiminnallisuuden uuden käyttäjän luomiseksi:
+     * Metodi kutsuu userDao:n findUser metodia tarkistaakseen, että
+     * käyttäjänimi ei ole varattu sekä create - metodia, jotta 
+     * uusi käyttäjä luodaan ja talletetaan.
+     * @param username luotavan käyttäjän käyttäjänimi
+     * @param name luotavan käyttäjän nimi
+     * @return true tai false sen mukaan, onnistuiko käyttäjän luominen
+     */
     public boolean createUser(String username, String name) {
         if (userDao.findUser(username) != null) {
             return false;
@@ -81,6 +91,7 @@ public class MoodtrackerActions {
                moodmap.put(moodvalue, 1);
            }
        }
+       
        
        return moodmap;
        
