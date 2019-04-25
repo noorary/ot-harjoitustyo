@@ -36,3 +36,9 @@ Käyttäjä voi valita moodin numeerisen arvon 1-10 välillä. Moodi tallennetaa
 Kun käyttäjä painaa *show moods in piechart" - painiketta, siirtyy sovellus näyttämään yhtenvedon
 käyttäjän tallettamista moodeista. 
 
+KUVA
+
+Diagramminäkymästä voi palata takaisin moodien lisäysnäkymään painamalla *Go Back* painiketta.
+
+Kun käyttäjä painaa moodien lisäysnäkymässä *LOGOUT*-nappulaa, kirjautuu käyttäjä ulos ja sovellus
+palaa takaisin kirjautumisnäkymään.
