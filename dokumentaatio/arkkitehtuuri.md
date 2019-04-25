@@ -27,7 +27,7 @@ toteuttavan MoodtrackerActions-luokan metodeja.
 
 Ohjelman osien suhdetta kuvaava luokka/pakkauskaavio
 
-![luokka/pakkauskaavio](https://raw.githubusercontent.com/noorarytila/ot-harjoitustyo/master/dokumentaatio/Moodtracker%20luokka_pakkauskaavio.png)
+![luokka/pakkauskaavio](https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Moodtracker%20luokka_pakkauskaavio.png?raw=true)
 
 ## Tietojen pysyväistallennus
 
@@ -68,7 +68,7 @@ Sovelluksen toimintalogiikka tärkeimpien päätoiminnallisuuksien osalta sekven
 Kun kirjautumiskenttään on kirjoitettu käyttäjätunnus ja loginButton:ia
 painetaan, etenee kirjautuminen seuraavasti
 
-![kirjautuminensekvenssi](https://raw.githubusercontent.com/noorarytila/ot-harjoitustyo/master/dokumentaatio/kirjautuminen.jpg)
+![kirjautumissekvenssi](https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/kirjautuminen.jpg?raw=true)
 
 **Uuden käyttäjän luominen**
 

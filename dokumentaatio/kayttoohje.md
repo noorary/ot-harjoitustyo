@@ -36,7 +36,7 @@ Käyttäjä voi valita moodin numeerisen arvon 1-10 välillä. Moodi tallennetaa
 Kun käyttäjä painaa *show moods in piechart" - painiketta, siirtyy sovellus näyttämään yhtenvedon
 käyttäjän tallettamista moodeista. 
 
-KUVA
+![sektoridiagrammi](https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/ko4.png?raw=true)
 
 Diagramminäkymästä voi palata takaisin moodien lisäysnäkymään painamalla *Go Back* painiketta.
 
