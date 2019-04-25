@@ -10,7 +10,7 @@ mvn compile exec:java -Dexec.mainClass=moodtracker.ui.MoodtrackerUi
 
 Sovellus käynnistyy kirjautumisnäkymään
 
-KUVA
+![kirjautumisnäkymä](https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/ko1.png?raw=true)
 
 Kirjautuminen onnistuu kirjoittamalla olemassaolevan käyttäjätunnus syötekenttään ja painamalla *LOGIN*
 
@@ -19,7 +19,7 @@ Kirjautuminen onnistuu kirjoittamalla olemassaolevan käyttäjätunnus syöteken
 Uusi käyttäjä luodaan painamalla kirjautumisnäkymässä *create new user* jonka jälkeen syötekenttiin
 kirjoitetaan tiedot ja painetaan *CREATE*
 
-KUVA
+![uuden käyttäjän luominen](https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/ko2.png?raw=true)
 
 Jos käyttäjän luominen onnistuu, palataan kirjautumisnäkymään.
 
@@ -27,7 +27,7 @@ Jos käyttäjän luominen onnistuu, palataan kirjautumisnäkymään.
 
 Kirjautumisen jälkeen siirrytään moodien lisäämisnäkymään.
 
-KUVA
+![moodin lisääminen](https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/ko3.png?raw=true)
 
 Käyttäjä voi valita moodin numeerisen arvon 1-10 välillä. Moodi tallennetaan painamalla *Add mood*
 
