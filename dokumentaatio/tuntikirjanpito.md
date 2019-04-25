@@ -20,4 +20,6 @@ päivä | aika | mitä tein
 19.4  | 1    | Edelleen yritin saada javafx toimimaan
 20.4  | 1.5  | Vihdoin javafx taas toimii
 21.4  | 4.5  | Piirakkadiagrammin toteutus
-yht   | 35   | 
+23.4  | 1    | Yksikkötestien tekeminen
+25.4  | 1    | Javadoc ja arkkitehtuurikuvaus
+yht   | 37   | 

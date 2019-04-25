@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.Group;
+import javafx.scene.layout.FlowPane;
 
 
 public class MoodtrackerUi extends Application {
@@ -78,6 +79,7 @@ public class MoodtrackerUi extends Application {
     @Override
     public void start(Stage stage) {
         
+        //toiminnallisuus metodeihin
         //todo log out
         //todo go back from creating new user
         //todo clear new user input fields
@@ -93,7 +95,7 @@ public class MoodtrackerUi extends Application {
         VBox newuserPane = new VBox(15);
         VBox mainPane = new VBox(15);
         HBox moodButtonPane = new HBox(15);
-        VBox piechartPane = new VBox(30);
+        HBox titleAndLogoutPane = new HBox(10);
         
         loginPane.setPadding(new Insets(10));
         startPane.setPadding(new Insets(20));
@@ -146,12 +148,15 @@ public class MoodtrackerUi extends Application {
         
         Button showPieChart = new Button("Show moods in piechart");
         //todo xyAxis chart
-
         
+        Button logout = new Button("LOG OUT");
+        Button back = new Button("BACK");
+
+        titleAndLogoutPane.getChildren().addAll(mainTitle, logout);
         loginPane.getChildren().addAll(usernameInput, usernameLabel, login);
         startPane.getChildren().addAll(appName, loginPane, newUser, userCreated);
         moodButtonPane.getChildren().addAll(m1, m2, m3, m4, m5, m6, m7, m8, m9, m10);
-        mainPane.getChildren().addAll(mainTitle, addNewMood, moodButtonPane, add, moodCreated, showPieChart);
+        mainPane.getChildren().addAll(titleAndLogoutPane, addNewMood, moodButtonPane, add, moodCreated, showPieChart);
         
         login.setOnAction(e ->{
             String inputUsername = usernameInput.getText();
@@ -203,17 +208,15 @@ public class MoodtrackerUi extends Application {
             moodtrackerActions.createMood(moodvalue);
             
             moodCreated.setText("Mood saved! :)");
-            rb.setSelected(false);
-            
-            
-            
+            rb.setSelected(false); 
         });
         
         showPieChart.setOnAction(e -> {
-            
-            showPieChart(stage);
-            
-   
+            showPieChart(stage, back);   
+        });
+        
+        logout.setOnAction(e -> {
+            stage.setScene(startScene);
         });
         
         
@@ -230,6 +233,10 @@ public class MoodtrackerUi extends Application {
         stage.setScene(startScene);
         stage.show();
         
+        back.setOnAction(e -> {
+            stage.setScene(mainScene);
+        });
+        
         
     }
     
@@ -237,7 +244,8 @@ public class MoodtrackerUi extends Application {
         launch(args);
     }
     
-    private void showPieChart(Stage stage) {
+    private void showPieChart(Stage stage, Button back) {
+
         int value1 = 0;
         int value2 = 0;
         int value3 =0;
@@ -313,18 +321,16 @@ public class MoodtrackerUi extends Application {
                 new PieChart.Data("8", value8),
                 new PieChart.Data("9", value9),
                 new PieChart.Data("10", value10));
-                
-            
              
-                 PieChart pieChart = new PieChart(pieChartData);
+                PieChart pieChart = new PieChart(pieChartData);
+
+                FlowPane chartPane = new FlowPane(pieChart, back);
+                 
+                piechartScene = new Scene(chartPane, 600, 500);
+                stage.setScene(piechartScene);
                  
                 
-                 
-                 
-                 Group root = new Group(pieChart);
-                 
-                 piechartScene = new Scene(root, 600, 500);
-                 stage.setScene(piechartScene);
     }
+    
     
 }
