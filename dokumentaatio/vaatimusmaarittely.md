@@ -8,7 +8,7 @@ Alkuvaiheessa sovelluksella on vain yksi käyttäjärooli eli *normaali käyttä
 sta lisätä sovellukseen suuremmilla oikeuksilla varustettu *pääkäyttäjä*.
 ## Käyttöliittymäluonnos
 Sovelluksessa on neljä eri näkymää.
-![Kuva käyttöliittymäluonnoksesta](https://raw.githubusercontent.com/noorarytila/ot-harjoitustyo/master/dokumentaatio/kayttoliittymaluonnos.jpg)
+![Kuva käyttöliittymäluonnoksesta](https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/kayttoliittymaluonnos.jpg?raw=true)
 Sovellus aukee kirjautumisnäkymään, josta on mahdollista siirty uuden käyttäjän luomisnäkymään tai
 kirjautua sisään ja siirtyä sovelluksen 'etusivulle'. Etusivulta voi siirtyä lisäämään uuden mielialan
 tai tarkastelemaan yhteenvetoa.
