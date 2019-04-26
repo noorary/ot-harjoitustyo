@@ -20,8 +20,15 @@ import java.util.Properties;
 
 public class FileMoodDao implements MoodDao {
     
-    public List<Mood> moods;
+    private List<Mood> moods;
     private String file;
+    
+    /**
+     * Konstruktori, joka valmistelee tiedoston moodien tallettamista ja lukemista varten
+     * @param file tiedoston nimi
+     * @param users UserDao 
+     * @throws Exception 
+     */
     
     public FileMoodDao(String file, UserDao users) throws Exception {
         moods = new ArrayList<>();
@@ -47,19 +54,20 @@ public class FileMoodDao implements MoodDao {
         
     }
     
-    @Override
-        public List<Mood> getAll() {
-                
-        return moods;
-        
-    }
              
-    public int generateId() {
+    private int generateId() {
         return moods.size() + 1;
     }
-             
+     
+    /**
+     * Metodi moodin luomiseksi ja tallettamiseksi tiedostoon.
+     * @param mood
+     * @return luo moodi olions
+     * @throws Exception 
+     */
+    
     @Override
-        public Mood create(Mood mood) throws Exception {
+    public Mood create(Mood mood) throws Exception {
         mood.setId(generateId());
         moods.add(mood);
         save();
@@ -73,6 +81,13 @@ public class FileMoodDao implements MoodDao {
             }
         }
     }
+    
+    /**
+     * Metodi luo tietyn käyttäjän moodeista ArrayListin
+     * @param user käyttäjä, jonka moodeja luetaan
+     * @return arraylist käyttäjän moodeista
+     * @throws Exception 
+     */
     
     public ArrayList<Integer> usersMoods (User user) throws Exception {
         

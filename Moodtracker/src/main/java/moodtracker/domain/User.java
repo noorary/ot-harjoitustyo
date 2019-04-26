@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 import moodtracker.dao.UserDao;
 
+/**
+ * Luokka toteuttaa käyttäjä-olion luomisen ja getter- ja setter -metodit
+ * 
+ */
+
 public class User {
     
     private String name;

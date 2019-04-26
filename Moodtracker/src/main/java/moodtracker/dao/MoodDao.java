@@ -8,11 +8,22 @@ import moodtracker.domain.Mood;
 import moodtracker.domain.User;
 
 public interface MoodDao {
+   
     
-    List<Mood> getAll();
-    
+    /**
+     * Metodi moodin luomiseen
+     * @param mood mood-olio
+     * @return luotu moodi
+     * @throws Exception 
+     */
     Mood create(Mood mood) throws Exception;
     
+    /**
+     * Metodi tietyn käyttäjän kaikkien tallennettujen moodien hakemiseen.
+     * @param user käyttäjä, jonka moodit haetaan
+     * @return ArrayList moodeista
+     * @throws Exception 
+     */
     ArrayList<Integer> usersMoods(User user) throws Exception;
     
     

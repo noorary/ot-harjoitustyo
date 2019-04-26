@@ -1,4 +1,3 @@
-//to-do sovellusnäkymän scene
 package moodtracker.ui;
 
 import java.time.LocalDate;
@@ -37,6 +36,11 @@ import java.util.logging.Logger;
 import javafx.scene.Group;
 import javafx.scene.layout.FlowPane;
 
+/**
+ * Luokka sisältää käyttöliittymän rakentavan koodin
+ * @author nrytila
+ */
+
 
 public class MoodtrackerUi extends Application {
     
@@ -49,9 +53,13 @@ public class MoodtrackerUi extends Application {
     private User currentlyLoggedIn;
     private LocalDate localdate;
     
-    public List<Mood> moods;
+    private List<Mood> moods;
     
-
+    
+    /**
+     * Metodi valmistelee tarvittavat elementit sovelluksen käynnistämistä varten.
+     * @throws Exception 
+     */
     @Override
     public void init() throws Exception{
         Properties properties = new Properties();
@@ -73,8 +81,10 @@ public class MoodtrackerUi extends Application {
     } 
     
     
-    
-
+    /**
+     * Metodi sisältää käyttöliittymän komponentit ja tapahtumakäsittelijät.
+     * @param stage metodi saa applikaation stagen parametrinä
+     */
     
     @Override
     public void start(Stage stage) {
@@ -240,6 +250,10 @@ public class MoodtrackerUi extends Application {
         
     }
     
+    /*
+    Metodi käynnistää sovelluksen
+    */
+    
     public static void main(String[] args) {
         launch(args);
     }
@@ -258,8 +272,6 @@ public class MoodtrackerUi extends Application {
         int value10 =0;
         
             try {
-                
-                System.out.println(moodtrackerActions.usersMoods());
                 
                 HashMap<Integer, Integer> moodmap = moodtrackerActions.usersMoods();
                 

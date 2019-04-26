@@ -7,13 +7,22 @@ import java.util.HashMap;
 import moodtracker.dao.UserDao;
 import moodtracker.dao.MoodDao;
 
+/**
+ * Luokka tarjoaa Moodtracker-sovelluksen toimintaan ja sovelluslogiikkaan
+ * liittyvät metodit.
+ * @author nrytila
+ */
+
 public class MoodtrackerActions {
     
     
     private UserDao userDao;
-    public User currentlyLoggedIn;
     private MoodDao moodDao;
-    public LocalDate localdate;
+    private LocalDate localdate;
+    /**
+     * Kirjautuneena oleva käyttäjä
+     */
+    public User currentlyLoggedIn;
     
     public MoodtrackerActions(UserDao userDao, MoodDao moodDao) {
         this.userDao = userDao;
@@ -48,6 +57,15 @@ public class MoodtrackerActions {
         
     }
     
+    /**
+     * Metodi toteuttaa sovelluslogiikan osalta sisäänkirjautumisen.
+     * Metodi luo uuden user-olion kutsumalla userDao:n findUser-metodia
+     * parametrinään käyttäjänimi ja asettaa kirjautuneen käyttäjän muuttujaan.
+     * 
+     * @param username sisäänkirjautuvan käyttäjän käyttäjänimi
+     * @return true jos sisäänkirjautuminen onnistuu, false jos käyttäjää ei löydy ja kirjautuminen epäonnistuu
+     */
+    
     public boolean login(String username) {
         
         User user = userDao.findUser(username);
@@ -59,6 +77,14 @@ public class MoodtrackerActions {
         
         return true;
     }
+    
+    
+    /**
+     * Metodi uuden moodin luomiseksi. Kutsuu moodDao:n create metodia,
+     * jotta uusi moodi luodaan ja talletetaan.
+     * @param value moodin numeerinen arvo
+     * @return true jos moodin luominen onnistuu, false jos ei onnistu, esimerkiksi tiedostoon kirjoittamisvirheen takia.
+     */
     
     public boolean createMood(int value) {
         
@@ -75,6 +101,14 @@ public class MoodtrackerActions {
         
         
     }
+    
+    /**
+     * Metodi, joka palauttaa tietyn käyttäjän moodit ja niiden määrän HashMap:ina. 
+     * Metodi kutsuu MoodDao:n saman nimistä metodia, jonka palauttamasta ArrayList:istä luodaan HashMap.
+     * 
+     * @return HashMapina käyttäjän moodit
+     * @throws Exception 
+     */
     
     public HashMap<Integer, Integer> usersMoods() throws Exception{
         
