@@ -17,10 +17,7 @@ public class FakeMoodDao implements MoodDao {
         
     }
     
-    @Override
-    public List<Mood> getAll() {
-        return moods;
-    }
+    
     
     @Override
     public Mood create(Mood mood) {
@@ -35,4 +32,8 @@ public class FakeMoodDao implements MoodDao {
         return moods;
     }
     
+    @Override
+    public List<Mood> getAll() {
+        return moods;
+    }
 }

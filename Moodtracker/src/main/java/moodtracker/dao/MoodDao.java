@@ -26,6 +26,7 @@ public interface MoodDao {
      */
     ArrayList<Integer> usersMoods(User user) throws Exception;
     
+    List<Mood> getAll();
     
     
 }

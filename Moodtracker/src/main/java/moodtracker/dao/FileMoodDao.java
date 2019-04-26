@@ -49,15 +49,28 @@ public class FileMoodDao implements MoodDao {
             FileWriter writer = new FileWriter(new File(file));
             writer.close();
         }
+    
+   
+        
         
         
         
     }
     
-             
-    private int generateId() {
+    /**
+     * Metodi luo moodille id:n
+     * @return id
+     */       
+    public int generateId() {
         return moods.size() + 1;
     }
+    
+     @Override
+    public List<Mood> getAll() {
+                
+        return moods;
+
+        }
      
     /**
      * Metodi moodin luomiseksi ja tallettamiseksi tiedostoon.
@@ -89,17 +102,17 @@ public class FileMoodDao implements MoodDao {
      * @throws Exception 
      */
     
-    public ArrayList<Integer> usersMoods (User user) throws Exception {
+    public ArrayList<Integer> usersMoods(User user) throws Exception {
         
         ArrayList<Integer> usersmoods = new ArrayList<>();
         Scanner reader = new Scanner(new FileReader("moods.txt"));
         
-        while(reader.hasNextLine()) {
+        while (reader.hasNextLine()) {
             String[] parts = reader.nextLine().split(";");
             
             
             String userf = user.toString();
-            if(parts[3].equals(userf)) {
+            if (parts[3].equals(userf)) {
                 usersmoods.add(Integer.parseInt(parts[1]));
             }
             

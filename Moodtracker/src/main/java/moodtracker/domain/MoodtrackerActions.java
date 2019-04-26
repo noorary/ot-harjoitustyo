@@ -110,28 +110,25 @@ public class MoodtrackerActions {
      * @throws Exception 
      */
     
-    public HashMap<Integer, Integer> usersMoods() throws Exception{
+    public HashMap<Integer, Integer> usersMoods() throws Exception {
         
-       ArrayList<Integer> usersmoods = moodDao.usersMoods(currentlyLoggedIn);
+        ArrayList<Integer> usersmoods = moodDao.usersMoods(currentlyLoggedIn);
        
-       HashMap<Integer, Integer> moodmap = new HashMap<>();
+        HashMap<Integer, Integer> moodmap = new HashMap<>();
        
-       for(int i=0; i < usersmoods.size(); i++) {
-           int moodvalue =usersmoods.get(i);
+        for (int i = 0; i < usersmoods.size(); i++) {
+            int moodvalue = usersmoods.get(i);
            
-           if(moodmap.containsKey(moodvalue)) {
-               moodmap.put(moodvalue, (moodmap.get(moodvalue) +1));
-           } else {
-               moodmap.put(moodvalue, 1);
-           }
-       }
+            if (moodmap.containsKey(moodvalue)) {
+                moodmap.put(moodvalue, (moodmap.get(moodvalue) + 1));
+            } else {
+                moodmap.put(moodvalue, 1);
+            }
+        }
        
        
-       return moodmap;
-       
-               
-       
-        
+        return moodmap;
+
     } 
     
     
