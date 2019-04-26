@@ -23,4 +23,5 @@ päivä | aika | mitä tein
 23.4  | 1    | Yksikkötestien tekeminen
 25.4  | 1    | Javadoc ja arkkitehtuurikuvaus
 25.4  | 3.5  | Arkkitehtuurikuvaus, käyttöohje, ui-hienosäätöä
-yht   | 40.5 | 
+26.4  | 2.5  | 
+yht   | 43   | 
