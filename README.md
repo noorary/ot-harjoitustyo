@@ -21,6 +21,8 @@ Testausdokumentti tulossa
 ### Releaset
 [Viikko5](https://github.com/noorarytila/ot-harjoitustyo/releases)
 
+[Viikko6](https://github.com/noorarytila/ot-harjoitustyo/releases/tag/viikko6)
+
 ### Komentorivikomennot
 
 #### Testaus
