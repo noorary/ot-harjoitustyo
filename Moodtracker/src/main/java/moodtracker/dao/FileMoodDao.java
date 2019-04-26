@@ -65,12 +65,12 @@ public class FileMoodDao implements MoodDao {
         return moods.size() + 1;
     }
     
-     @Override
+    @Override
     public List<Mood> getAll() {
                 
         return moods;
 
-        }
+    }
      
     /**
      * Metodi moodin luomiseksi ja tallettamiseksi tiedostoon.
