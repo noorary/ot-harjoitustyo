@@ -25,4 +25,5 @@ päivä | aika | mitä tein
 25.4  | 3.5  | Arkkitehtuurikuvaus, käyttöohje, ui-hienosäätöä
 26.4  | 2.5  | Dokumentiaation tekeminen
 3.5   | 2    | Gui:n korjailua
-yht   | XX   | 
+3.5   | 4.5  | Loppupalautuksen valmistelu, dokumentointi ja bugin korjaaminen
+yht   | 49.5 | 
