@@ -10,6 +10,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
@@ -308,7 +309,7 @@ public class MoodtrackerUi extends Application {
             try {
                 
                 HashMap<Integer, Integer> moodmap = moodtrackerActions.usersMoods();
-                
+                System.out.println(moodmap);
                 if(moodmap.containsKey(1)) {
                     value1 = moodmap.get(1);
                 } 
@@ -330,22 +331,22 @@ public class MoodtrackerUi extends Application {
                 }
                 
                 if(moodmap.containsKey(6)) {
-                    value2 = moodmap.get(6);
+                    value6 = moodmap.get(6);
                 }
                 
                 if(moodmap.containsKey(7)) {
-                    value2 = moodmap.get(7);
+                    value7 = moodmap.get(7);
                 }
                 
                 if(moodmap.containsKey(8)) {
-                    value2 = moodmap.get(8);
+                    value8 = moodmap.get(8);
                 }
                 if(moodmap.containsKey(9)) {
-                    value2 = moodmap.get(9);
+                    value9 = moodmap.get(9);
                 }
                 
                 if(moodmap.containsKey(10)) {
-                    value2 = moodmap.get(10);
+                    value10 = moodmap.get(10);
                 }
                 
                 
@@ -353,10 +354,24 @@ public class MoodtrackerUi extends Application {
                 Logger.getLogger(MoodtrackerUi.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-             ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+            int div = value1 + value2 + value3 + value4 + value5 + value6 + value7 + value8 + value9 + value10;
             
-            new PieChart.Data("1", value1),
-            new PieChart.Data("2", value2),
+            System.out.println(value1);
+            System.out.println(value2);
+            System.out.println(value3);
+            System.out.println(value4);
+            System.out.println(value5);
+            System.out.println(value6);
+            System.out.println(value7);
+            System.out.println(value8);
+            System.out.println(value9);
+            System.out.println(value10);
+            
+            ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+               
+                
+                new PieChart.Data("1", value1),
+                new PieChart.Data("2", value2),
                 new PieChart.Data("3", value3),
                 new PieChart.Data("4", value4),
                 new PieChart.Data("5", value5),
@@ -364,11 +379,13 @@ public class MoodtrackerUi extends Application {
                 new PieChart.Data("7", value7),
                 new PieChart.Data("8", value8),
                 new PieChart.Data("9", value9),
-                new PieChart.Data("10", value10));
+                new PieChart.Data("10", value10)
+             
+            );
              
             
              
-                PieChart pieChart = new PieChart(pieChartData);
+                final PieChart pieChart = new PieChart(pieChartData);
 
                 FlowPane chartPane = new FlowPane(pieChart, back);
                  
