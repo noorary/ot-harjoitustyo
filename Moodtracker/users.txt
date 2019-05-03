@@ -14,3 +14,5 @@ noorarosaaaa;Noora
 noora;Noora Rytilä
 merkkari;Marja Merkkari
 user;user
+n;nn
+foo;foobar

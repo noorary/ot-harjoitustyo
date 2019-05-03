@@ -25,7 +25,7 @@ mahdollisimman hyvin sovelluksen todellista käyttöä.
 
 Sovelluksen testien rivikattavuus on 89% ja haarautumiskattavuus 85%.
 
-![jacoco]()
+![jacoco](https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/testikattavuus.png?raw=true)
 
 Testeistä on jätetty käyttöliittymäkoodi pois. Testaamatta jäivät tilanteet, joissa tiedostoon lukeminen
 tai kirjoittaminen epäonnistuu, sekä osa MoodtrackerActions-luokan usersMoods-metodista.
@@ -34,5 +34,19 @@ tai kirjoittaminen epäonnistuu, sekä osa MoodtrackerActions-luokan usersMoods-
 
 Sovelluksen järjestelmätestaus on suoritettu manuaalisesti. Testauksen suorittaminen on ollut mahdollista
 vain Linux-ympäristössä.
+
+### Asennus ja konfigurointi
+
+Sovelus on testattu Linux-ympäristössä niin, että sovellusta on käytetty
+käyttöohjeen kuvaamalla tavalla ja käynnistyshakemistossa on ollut käyttöohjeen mukainen config.properties tiedosto.
+
+### Toiminnallisuudet
+
+Kaikki [vaatimusmäärittelyssa](https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+kuvatut toiminnallisuudet on testattu. Tekstikentät on myös yritetty täyttää testatessa tyhjillä arvoilla.
+
+## Sovellukseen jääneet laatuongelmat
+
+* Sovellus ei anna järkevää virheilmoitusta jos käyttäjä yrittää lisätä moodin valitsematta sille arvoa
 
  

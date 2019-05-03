@@ -16,7 +16,7 @@ Sovellus tarjoaa yhteenvetoja mielialojen kehityksestä.
 
 [Arkkitehtuurikuvaus](https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
-Testausdokumentti tulossa
+[Testausdokumentti](https://github.com/noorarytila/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)
 
 ### Releaset
 [Viikko5](https://github.com/noorarytila/ot-harjoitustyo/releases)
@@ -46,8 +46,6 @@ Komento
 generoi hakemistoon *target* suoritettavan jar-tiedoston Moodtracker-1.0-SNAPSHOT.jar
 
 #### JavaDoc
-
-**tulossa**
 
 JavaDoc generoidaan komennolla
 
