@@ -108,3 +108,12 @@ Metodissa UI kutsuu sovelluslogiikan *usersMoods*-metodia, joka taas kutsuu *Moo
 *MoodDao* palauttaa sovelluslogiikalle ArrayListin moodeista, joiden avulla sovelluslogiikka palauttaa
 UI:lle HashMapin käyttäjän moodeista. Käyttöliittymä luo HashMapin datan perusteella sektoridiagrammin
 ja vaihtaa nkymäksi *piechartScenen*.
+
+## Rakenteen heikkoudet
+
+### Käyttöliittymä
+
+Käyttöliittymän koodi jäi melko sekavaksi, sillä lähes kaikki rakentava koodi
+on *start*-metodissa. Ympyrädiagrammin toteutus on omassa metodissaan, mutta
+muukin koodi tulisi olla luettavuuden ja selkeyden kannalta jaettu omiin metodeihin.
+ 
