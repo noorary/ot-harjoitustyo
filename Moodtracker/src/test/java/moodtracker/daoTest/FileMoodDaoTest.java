@@ -87,7 +87,7 @@ public class FileMoodDaoTest {
         
         ArrayList<Integer> um = dao.usersMoods(erkki);
         int moodi = um.get(0);
-        assertEquals(moodi, 4);
+        assertEquals(moodi, 9);
     }
     
 }
