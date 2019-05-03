@@ -1,5 +1,9 @@
 package moodtracker.ui;
 
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import java.awt.GraphicsEnvironment;
+import java.util.concurrent.TimeUnit;
 import java.time.LocalDate;
 import java.io.FileInputStream;
 import java.lang.reflect.InvocationTargetException;
@@ -35,6 +39,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.Group;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
 /**
  * Luokka sisältää käyttöliittymän rakentavan koodin
@@ -89,15 +95,8 @@ public class MoodtrackerUi extends Application {
     @Override
     public void start(Stage stage) {
         
-        //toiminnallisuus metodeihin
-        //todo log out
-        //todo go back from creating new user
-        //todo clear new user input fields
-        //todo new user fieldien koko
-        //todo user created tekstin hienosäätö
-        //mood saved teksti pois muutaman sekunnin päästä
-        //kuka on kirjautunu?
-        //piirakasta paluu go back
+        //todo toiminnallisuus metodeihin
+        //todo kuka on kirjautunu?
         
         
         VBox loginPane = new VBox(15);
@@ -110,6 +109,9 @@ public class MoodtrackerUi extends Application {
         loginPane.setPadding(new Insets(10));
         startPane.setPadding(new Insets(20));
         Label appName = new Label("MoodTracker");
+        Font font = Font.font("Cousine", 50);
+        appName.setFont(font);
+        Label userNotFound = new Label("");
         
         Label usernameLabel = new Label("Username");
         TextField usernameInput = new TextField();
@@ -120,28 +122,64 @@ public class MoodtrackerUi extends Application {
         
         
         //todo MoodTracker labelin kustomointi
-        //todo username kentän koko
-        //
         
         Label mainTitle = new Label("");
         Label addNewMood = new Label("Add new mood, 1 = lowest, 10 = highest");
+
         
         //todo radiobuttoneille moodeja vastaavat värit
         
         
         ToggleGroup group = new ToggleGroup();
         RadioButton m1 = new RadioButton("1");
+        m1.setGraphic(new Circle(10));
+        
         RadioButton m2 = new RadioButton("2");
+        Circle darkred = new Circle(10);
+        darkred.setFill(Color.DARKRED);
+        m2.setGraphic(darkred);
+        
         RadioButton m3 = new RadioButton("3");
+        Circle red = new Circle(10);
+        red.setFill(Color.RED);
+        m3.setGraphic(red);
+        
         RadioButton m4 = new RadioButton("4");
+        Circle darkviolet = new Circle(10);
+        darkviolet.setFill(Color.DARKVIOLET);
+        m4.setGraphic(darkviolet);
+        
         RadioButton m5 = new RadioButton("5");
+        Circle mediumblue = new Circle(10);
+        mediumblue.setFill(Color.MEDIUMBLUE);
+        m5.setGraphic(mediumblue);
+        
         RadioButton m6 = new RadioButton("6");
+        Circle deepsky = new Circle(10);
+        deepsky.setFill(Color.DEEPSKYBLUE);
+        m6.setGraphic(deepsky);
+        
         RadioButton m7 = new RadioButton("7");
+        Circle turquoise = new Circle(10);
+        turquoise.setFill(Color.TURQUOISE);
+        m7.setGraphic(turquoise);
+        
         RadioButton m8 = new RadioButton("8");
+        Circle cyan = new Circle(10);
+        cyan.setFill(Color.CYAN);
+        m8.setGraphic(cyan);
+        
         RadioButton m9 = new RadioButton("9");
+        Circle lime = new Circle(10);
+        lime.setFill(Color.LIME);
+        m9.setGraphic(lime);
+        
         RadioButton m10 = new RadioButton("10");
+        Circle greenyellow = new Circle(10);
+        greenyellow.setFill(Color.GREENYELLOW);
+        m10.setGraphic(greenyellow);
+        
         m1.setToggleGroup(group);
-        //m1.setSelected(true);
         m2.setToggleGroup(group);
         m3.setToggleGroup(group);
         m4.setToggleGroup(group);
@@ -163,7 +201,7 @@ public class MoodtrackerUi extends Application {
         Button back = new Button("BACK");
 
         titleAndLogoutPane.getChildren().addAll(mainTitle, logout);
-        loginPane.getChildren().addAll(usernameInput, usernameLabel, login);
+        loginPane.getChildren().addAll(usernameInput, usernameLabel, login, userNotFound);
         startPane.getChildren().addAll(appName, loginPane, newUser, userCreated);
         moodButtonPane.getChildren().addAll(m1, m2, m3, m4, m5, m6, m7, m8, m9, m10);
         mainPane.getChildren().addAll(titleAndLogoutPane, addNewMood, moodButtonPane, add, moodCreated, showPieChart);
@@ -171,13 +209,16 @@ public class MoodtrackerUi extends Application {
         login.setOnAction(e ->{
             String inputUsername = usernameInput.getText();
             
-            //todo viesti jos käyttäjää ei löydy
-            
             if(moodtrackerActions.login(inputUsername)) {
+                usernameInput.setText("");
                 mainTitle.setText("Welcome to MoodTracker! ");
                 stage.setScene(mainScene);
+            } else {
+                
+                userNotFound.setTextFill(Color.RED);
+                userNotFound.setText("Username was not found");
             }
-        });
+        });    
         
         newUser.setOnAction(e->{
             usernameInput.setText("");
@@ -197,15 +238,17 @@ public class MoodtrackerUi extends Application {
         createNewUserButton.setOnAction(e->{
             String username = newUsernameField.getText();
             String name = newNameField.getText();
-            
-            // todo: jos käyttäjätunnus on varattu ilmoitus siitä
    
             if ( username.length()==2 || name.length()<2 ) {
-                errorMessage.setText("name or username too short");
+                errorMessage.setText("Name or username too short");
             } else if (moodtrackerActions.createUser(username, name)) {
-                userCreated.setText("user created");
+                newUsernameField.setText("");
+                newNameField.setText("");
+                userCreated.setText("User created");
                 stage.setScene(startScene);      
-            } 
+            } else {
+                errorMessage.setText("Username is taken");
+            }
  
         });
         
@@ -231,9 +274,9 @@ public class MoodtrackerUi extends Application {
         
         
         
-        startScene = new Scene(startPane, 600, 500);
-        newUserScene = new Scene(newuserPane, 600, 500);
-        mainScene = new Scene(mainPane, 600, 500);
+        startScene = new Scene(startPane, 1000, 1000);
+        newUserScene = new Scene(newuserPane, 500, 400);
+        mainScene = new Scene(mainPane, 1000, 1000);
         
         
         
@@ -256,6 +299,12 @@ public class MoodtrackerUi extends Application {
     
     public static void main(String[] args) {
         launch(args);
+        
+        String[] fonts =
+                GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+        for (int i = 0; i < fonts.length; i++) {
+            System.out.println(fonts[i]);
+        }
     }
     
     private void showPieChart(Stage stage, Button back) {
@@ -338,7 +387,7 @@ public class MoodtrackerUi extends Application {
 
                 FlowPane chartPane = new FlowPane(pieChart, back);
                  
-                piechartScene = new Scene(chartPane, 600, 500);
+                piechartScene = new Scene(chartPane, 500, 400);
                 stage.setScene(piechartScene);
                  
                 

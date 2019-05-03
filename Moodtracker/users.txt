@@ -11,3 +11,5 @@ esimerkki;erkki
 noorarosa;noora
 jamppa;jarmo
 noorarosaaaa;Noora
+noora;Noora Rytilä
+merkkari;Marja Merkkari
