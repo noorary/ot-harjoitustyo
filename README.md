@@ -55,7 +55,7 @@ JavaDocia voi tarkastella avaamalla selaimella tiedosto *target/site/apidocs/ind
 
 #### Checkstyle
 
-Tiedostoon **checkstyle.xml(linkki tulossa)* määritellyt tarkistukset suoritetaan komennolla
+Tiedostoon [checkstyle.xml](https://github.com/noorarytila/ot-harjoitustyo/blob/master/Moodtracker/checkstyle.xml) määritellyt tarkistukset suoritetaan komennolla
 
 ```mvn jxr:jxr checkstyle:checkstyle```
 
