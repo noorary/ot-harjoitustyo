@@ -19,6 +19,14 @@ public class Mood {
     private LocalDate date;
     private User user;
     
+    /**
+     * Konstruktori, jonka avulla voidaan luoda moodi-olion
+     * @param id moodin yksilöivä id
+     * @param value moodin numeerinen arvo
+     * @param date moodin tallennuspäivämäärä
+     * @param user moodiin liittyvä käyttäjä
+     */
+    
     public Mood(int id, int value, LocalDate date, User user) {
         
         this.id = id;

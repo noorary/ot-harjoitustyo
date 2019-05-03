@@ -19,7 +19,7 @@ public class FileUserDao implements UserDao {
     private String file;
     
     /**
-     *
+     * Konstruktori, joka valmistelee tiedoston käyttäjien tallentamista varten
      * @param file käyttäjien tallentavan tiedoston nimi
      * @throws Exception heittää virheen, jos tiedoston luominen/
      * kirjoittaminen epäonnistuu

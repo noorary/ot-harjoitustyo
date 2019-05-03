@@ -7,6 +7,11 @@ import java.util.List;
 import moodtracker.domain.Mood;
 import moodtracker.domain.User;
 
+/**
+ * Rajapinta Data Acces object:in mukaiseen Moodien tallettamiseen ja hallintaan
+ * @author nrytila
+ */
+
 public interface MoodDao {
    
     

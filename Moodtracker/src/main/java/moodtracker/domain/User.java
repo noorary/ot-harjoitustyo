@@ -15,6 +15,12 @@ public class User {
     private String name;
     private String username;
     
+    
+    /**
+     * Konstruktori käyttäjän luomiseksi
+     * @param username käyttäjänimi merkkijonona
+     * @param name käyttäjän nimi merkkijonona
+     */
     public User(String username, String name) {
         this.name = name;
         this.username = username;

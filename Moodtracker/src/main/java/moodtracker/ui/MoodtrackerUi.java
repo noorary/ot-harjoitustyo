@@ -48,7 +48,6 @@ import javafx.scene.text.Font;
  * @author nrytila
  */
 
-
 public class MoodtrackerUi extends Application {
     
     private MoodtrackerActions moodtrackerActions;
@@ -185,7 +184,7 @@ public class MoodtrackerUi extends Application {
         Button add = new Button("Add mood");
         Label moodCreated = new Label("");
         
-        Button showPieChart = new Button("Show moods in piechart");
+        Button showPieChart = new Button("Show moodsummary");
         
         Button logout = new Button("LOG OUT");
         Button back = new Button("BACK");
@@ -284,9 +283,10 @@ public class MoodtrackerUi extends Application {
         
     }
     
-    /*
-    Metodi käynnistää sovelluksen
-    */
+    /**
+     * metodi käynnistää sovelluksen
+     * @param args 
+     */
     
     public static void main(String[] args) {
         launch(args);

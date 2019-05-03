@@ -24,6 +24,12 @@ public class MoodtrackerActions {
      */
     public User currentlyLoggedIn;
     
+    
+    /**
+     * Valmistelee käytettävän toiminnallisuusluokan
+     * @param userDao toiminnallisuuksiin käytettävä käyttäjien tallentamiseen liittyvä Data Access Object
+     * @param moodDao toiminnallisuuksiin käytettävä moodien tallentamiseen liittyvä Data Access Object
+     */
     public MoodtrackerActions(UserDao userDao, MoodDao moodDao) {
         this.userDao = userDao;
         this.moodDao = moodDao;

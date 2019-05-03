@@ -18,6 +18,10 @@ import java.time.LocalDate;
 import java.util.Properties;
 
 
+/**
+ * Luokka joka tarjoaa Data Access Object metodit moodien tallentamiseksi tiedostoon 
+ * @author nrytila
+ */
 public class FileMoodDao implements MoodDao {
     
     private List<Mood> moods;
@@ -65,6 +69,10 @@ public class FileMoodDao implements MoodDao {
         return moods.size() + 1;
     }
     
+    /**
+     * Metodi kaikkien talletettujen moodien listaamiseen
+     * @return lista talletetuista moodeista
+     */
     @Override
     public List<Mood> getAll() {
                 
