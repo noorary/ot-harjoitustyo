@@ -1,10 +1,6 @@
 # Ohjelman käynnistäminen
 
-Sovellus käynnistetään palautusrepositoriossa komennolla
-
-```
-mvn compile exec:java -Dexec.mainClass=moodtracker.ui.MoodtrackerUi
-```
+SOVELLUKSEN KÄYNNISTYSOHJE!
 
 # Kirjautuminen
 
