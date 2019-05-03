@@ -1,6 +1,7 @@
 package moodtracker.domainTest;
 
 
+import java.util.EmptyStackException;
 import moodtracker.domain.User;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -40,6 +41,11 @@ public class UserTest {
         User user1 = new User(username, name);
         assertEquals(user1.toString(), "nickname");
     }
+    
+    
+
+
+    
 
     
 }

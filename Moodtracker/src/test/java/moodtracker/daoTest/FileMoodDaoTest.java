@@ -13,6 +13,7 @@ import static org.junit.Assert.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import moodtracker.dao.FileMoodDao;
 import moodtracker.dao.UserDao;
@@ -34,15 +35,17 @@ public class FileMoodDaoTest {
     
     File userFile;
     FileMoodDao dao;
+    User erkki;
     
     public FileMoodDaoTest() {
+        erkki = new User("esimerkki", "erkki");
     }
     
     @Before
     public void setUp() throws Exception {
         userFile = testFolder.newFile("testfile_users.txt");
         UserDao userDao = new FakeUserDao();
-        userDao.create(new User("esimerkki", "erkki"));
+        userDao.create(erkki);
         
         try (FileWriter file = new FileWriter(userFile.getAbsolutePath())) {
             file.write("1;3;2019-01-12;esimerkki");
@@ -77,6 +80,14 @@ public class FileMoodDaoTest {
         Mood m = new Mood(0, 9, d, u);
         
         assertEquals(dao.create(m), m);
+    }
+    
+    @Test
+    public void usersMoodsWorks() throws Exception {
+        
+        ArrayList<Integer> um = dao.usersMoods(erkki);
+        int moodi = um.get(0);
+        assertEquals(moodi, 4);
     }
     
 }

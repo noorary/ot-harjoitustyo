@@ -15,6 +15,7 @@ import moodtracker.dao.UserDao;
 import java.io.File;
 import java.io.FileWriter;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
 import moodtracker.dao.FileUserDao;
 import moodtracker.dao.FileMoodDao;
@@ -100,7 +101,7 @@ public class MoodtrackerActionsTest {
         assertTrue(actions.login("esimerkki"));
         assertFalse(actions.login("erkki"));
     }
-    
+
     
     
     

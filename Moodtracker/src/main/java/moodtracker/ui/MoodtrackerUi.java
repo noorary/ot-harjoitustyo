@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import java.time.LocalDate;
 import java.io.FileInputStream;
 import java.lang.reflect.InvocationTargetException;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
@@ -95,9 +96,6 @@ public class MoodtrackerUi extends Application {
     @Override
     public void start(Stage stage) {
         
-        //todo toiminnallisuus metodeihin
-        //todo kuka on kirjautunu?
-        
         
         VBox loginPane = new VBox(15);
         VBox startPane = new VBox(30);
@@ -120,15 +118,8 @@ public class MoodtrackerUi extends Application {
         
         Label userCreated = new Label("");
         
-        
-        //todo MoodTracker labelin kustomointi
-        
         Label mainTitle = new Label("");
         Label addNewMood = new Label("Add new mood, 1 = lowest, 10 = highest");
-
-        
-        //todo radiobuttoneille moodeja vastaavat värit
-        
         
         ToggleGroup group = new ToggleGroup();
         RadioButton m1 = new RadioButton("1");
@@ -195,7 +186,6 @@ public class MoodtrackerUi extends Application {
         Label moodCreated = new Label("");
         
         Button showPieChart = new Button("Show moods in piechart");
-        //todo xyAxis chart
         
         Button logout = new Button("LOG OUT");
         Button back = new Button("BACK");
@@ -274,9 +264,10 @@ public class MoodtrackerUi extends Application {
         
         
         
-        startScene = new Scene(startPane, 1000, 1000);
-        newUserScene = new Scene(newuserPane, 500, 400);
-        mainScene = new Scene(mainPane, 1000, 1000);
+        startScene = new Scene(startPane, 750, 400);
+        newUserScene = new Scene(newuserPane, 750, 400);
+        mainScene = new Scene(mainPane, 750, 400);
+        
         
         
         
@@ -299,12 +290,6 @@ public class MoodtrackerUi extends Application {
     
     public static void main(String[] args) {
         launch(args);
-        
-        String[] fonts =
-                GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
-        for (int i = 0; i < fonts.length; i++) {
-            System.out.println(fonts[i]);
-        }
     }
     
     private void showPieChart(Stage stage, Button back) {
@@ -368,12 +353,10 @@ public class MoodtrackerUi extends Application {
                 Logger.getLogger(MoodtrackerUi.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-            //todo kaavion numeroille oikeat värit
-            
              ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
             
-                new PieChart.Data("1", value1),
-                new PieChart.Data("2", value2),
+            new PieChart.Data("1", value1),
+            new PieChart.Data("2", value2),
                 new PieChart.Data("3", value3),
                 new PieChart.Data("4", value4),
                 new PieChart.Data("5", value5),
@@ -383,12 +366,15 @@ public class MoodtrackerUi extends Application {
                 new PieChart.Data("9", value9),
                 new PieChart.Data("10", value10));
              
+            
+             
                 PieChart pieChart = new PieChart(pieChartData);
 
                 FlowPane chartPane = new FlowPane(pieChart, back);
                  
-                piechartScene = new Scene(chartPane, 500, 400);
+                piechartScene = new Scene(chartPane, 750, 400);
                 stage.setScene(piechartScene);
+              
                  
                 
     }
